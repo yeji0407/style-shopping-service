@@ -1,4 +1,4 @@
-package com.musinsa.style.shopping.service.common.persistence.jpa.entity;
+package com.musinsa.style.shopping.service.common.persistence.jpa.category.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

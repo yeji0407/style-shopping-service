@@ -1,5 +1,7 @@
-package com.musinsa.style.shopping.service.common.persistence.jpa.entity;
+package com.musinsa.style.shopping.service.common.persistence.jpa.product.entity;
 
+import com.musinsa.style.shopping.service.common.persistence.jpa.brand.entity.Brand;
+import com.musinsa.style.shopping.service.common.persistence.jpa.category.entity.Category;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
