@@ -7,18 +7,28 @@ spring:
   h2:
     console:
       enabled: true
+  sql:
+    init:
+      mode: always
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     show-sql: true
     properties:
       hibernate:
         format_sql: true
+    open-in-view: true
   cache:
     type: caffeine
     caffeine:
-      spec: maximumSize=500,expireAfterAccess=5m
+      spec: maximumSize=1000,expireAfterAccess=10m
 
 logging:
   level:
     com: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: caches

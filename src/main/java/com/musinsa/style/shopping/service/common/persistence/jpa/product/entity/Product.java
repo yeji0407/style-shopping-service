@@ -2,18 +2,15 @@ package com.musinsa.style.shopping.service.common.persistence.jpa.product.entity
 
 import com.musinsa.style.shopping.service.common.persistence.jpa.brand.entity.Brand;
 import com.musinsa.style.shopping.service.common.persistence.jpa.category.entity.Category;
+import com.musinsa.style.shopping.service.common.persistence.jpa.common.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-import java.time.LocalDateTime;
 
 @Entity
 @Getter
-@Setter
 @NoArgsConstructor
-public class Product {
+public class Product extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,11 +28,21 @@ public class Product {
 
     private Boolean isDeleted = false;
 
-    private String createdBy;
+    public Product(Brand brand, Category category, Long price) {
+        this.brand = brand;
+        this.category = category;
+        this.price = price;
+    }
 
-    private LocalDateTime createdAt = LocalDateTime.now();
+    public void updatePrice(Long price) {
+        this.price = price;
+    }
 
-    private String modifiedBy;
+    public void softDelete() {
+        this.isDeleted = true;
+    }
 
-    private LocalDateTime modifiedAt = LocalDateTime.now();
+    public boolean isDeleted() {
+        return isDeleted;
+    }
 }

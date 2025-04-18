@@ -1,5 +1,6 @@
 import { ConfigProvider } from 'antd';
 import { createRoot } from 'react-dom/client';
+import App from './App.tsx';
 
 const container = document.getElementById('container');
 
@@ -19,7 +20,7 @@ if (container) {
         },
       } }
     >
-      {/*<App />*/}
+      <App />
     </ConfigProvider>,
   );
 }
